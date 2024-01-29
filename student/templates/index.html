@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Student Profile</h2>
+    <p>Welcome, {{ user.get_username }}!</p>
+    
+    {% if user.date_of_birth %}
+        <p>Date of Birth: {{ user.date_of_birth }}</p>
+    {% endif %}
+
+    <img src="{{ user.profile_image.url }}" alt="Profile Picture">
+
+    <p>You have visited this page {{ visit_count }} times.</p>
+    <a href="logout">Logout</a>
+{% endblock %}
